@@ -14,7 +14,7 @@ SERVER = os.getenv('DISCORD_SERVER')
 CHANNEL = os.getenv('DISCORD_BOT_CHANNEL')
 
 
-class ShirukeBot(commands.Bot):
+class dbot(commands.Bot):
 
     def __init__(self, command_prefix, case_insensitive, self_bot, owner_id, server, channel, intents):
         commands.Bot.__init__(self, command_prefix=command_prefix,
@@ -26,7 +26,7 @@ class ShirukeBot(commands.Bot):
         self.mod_ids = []
         self.server = int(server)
         self.channel = int(channel)
-        print('ShirukeBot initialized')
+        print('dbot initialized')
         print(f'    owner role id: {self.owner_id}')
 
 
@@ -34,7 +34,7 @@ class ShirukeBot(commands.Bot):
 intents = discord.Intents.default()
 intents.members = True
 
-bot = ShirukeBot(command_prefix='!', case_insensitive=True, self_bot=False,
+bot = dbot(command_prefix='!', case_insensitive=True, self_bot=False,
                  owner_id=OWNER, server=SERVER, channel=CHANNEL, intents=intents)
 
 @bot.event
